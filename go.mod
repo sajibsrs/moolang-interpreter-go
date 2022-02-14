@@ -1,3 +1,3 @@
-module github.com/sajibsrs/moolang-interpreter-go
+module moolang
 
 go 1.17
