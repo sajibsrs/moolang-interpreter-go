@@ -22,17 +22,17 @@ const (
 	SUBSTRACT = "-"
 	BANG      = "!"
 	ASTERISK  = "*"
-	SLASH     = "/"
+	BSLASH    = "/"
 	LESSER    = "<"
 	GREATER   = ">"
 
 	// Delimiters
 	COMMA     = ","
 	SEMICOLON = ";"
-	O_PAREN   = "("
-	C_PAREN   = ")"
-	O_BRACE   = "{"
-	C_BRACE   = "}"
+	OPAREN    = "("
+	CPAREN    = ")"
+	OBRACE    = "{"
+	CBRACE    = "}"
 
 	// Keywords
 	FUNCTION = "FUNCTION"

@@ -42,17 +42,23 @@ func (l *Lexer) NextToken() token.Token {
 	case ';':
 		tk = newToken(token.SEMICOLON, l.ch)
 	case '(':
-		tk = newToken(token.O_PAREN, l.ch)
+		tk = newToken(token.OPAREN, l.ch)
 	case ')':
-		tk = newToken(token.C_PAREN, l.ch)
+		tk = newToken(token.CPAREN, l.ch)
 	case ',':
 		tk = newToken(token.COMMA, l.ch)
 	case '+':
 		tk = newToken(token.ADD, l.ch)
+	case '-':
+		tk = newToken(token.SUBSTRACT, l.ch)
+	case '*':
+		tk = newToken(token.ASTERISK, l.ch)
+	case '/':
+		tk = newToken(token.BSLASH, l.ch)
 	case '{':
-		tk = newToken(token.O_BRACE, l.ch)
+		tk = newToken(token.OBRACE, l.ch)
 	case '}':
-		tk = newToken(token.C_BRACE, l.ch)
+		tk = newToken(token.CBRACE, l.ch)
 	case 0:
 		tk.Literal = ""
 		tk.Type = token.EOF
