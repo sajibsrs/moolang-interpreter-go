@@ -75,7 +75,13 @@ func (l *Lexer) NextToken() token.Token {
 	case '>':
 		tk = newToken(token.GREATER, l.ch)
 	case '!':
-		tk = newToken(token.BANG, l.ch)
+		if l.peekChar() == '=' {
+			ch := l.ch
+			l.readChar()
+			tk = token.Token{Type: token.NOT_EQUAL, Literal: string(ch) + string(l.ch)}
+		} else {
+			tk = newToken(token.BANG, l.ch)
+		}
 	case '{':
 		tk = newToken(token.OBRACE, l.ch)
 	case '}':
