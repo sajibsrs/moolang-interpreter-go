@@ -25,6 +25,8 @@ const (
 	BSLASH    = "/"
 	LESSER    = "<"
 	GREATER   = ">"
+	IS_EQUAL  = "=="
+	NOT_EQUAL = "!="
 
 	// Delimiters
 	COMMA     = ","
