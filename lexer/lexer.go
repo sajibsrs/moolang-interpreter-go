@@ -79,6 +79,13 @@ func (l *Lexer) readIdentifier() string {
 	return l.input[position:l.position]
 }
 
+// Ignore whitespace characters (Space, TAB and Carriage return).
+func (l *Lexer) skipWhitespace() {
+	for l.ch == ' ' || l.ch == '\t' || l.ch == '\r' {
+		l.readChar()
+	}
+}
+
 // Creates new token and returns Token object.
 func newToken(tk token.TokenType, ch byte) token.Token {
 	return token.Token{Type: tk, Literal: string(ch)}
