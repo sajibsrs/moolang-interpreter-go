@@ -1,7 +1,7 @@
 # moolang-interpreter-go
 Moolang interpreter written in go language.
 
-Built based on [Writing An Interpreter In Go](https://interpreterbook.com/) book. But I believe it'll have some difference and additional features.
+Built based on [Writing An Interpreter In Go](https://interpreterbook.com/) mainly and some other books. But I believe it'll have some difference and additional features.
 
 *Note: Under construction. Not yet ready for experiment or use.*
 
