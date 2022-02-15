@@ -7,10 +7,10 @@ Built based on [Writing An Interpreter In Go](https://interpreterbook.com/) main
 
 ## Table of contents (TODO's)
 * [ ] Desiging the language.
-* [ ] Writing interpreter.
 * [ ] Lexer.
 * [ ] Parser.
 * [ ] Abstract Syntax Tree (AST).
+* [ ] Writing interpreter.
 * [ ] Built-in data structures (String, Built-in functions, Array, Hashes, Closures).
 * [ ] Class support (which I'm not sure yet).
 * [ ] Garbage collection.
