@@ -18,7 +18,7 @@ func New(input string) *Lexer {
 	return lex
 }
 
-// Reads current char from Lexer input.
+// Reads current char from Lexer input and moves to next position.
 func (l *Lexer) readChar() {
 	if l.readPosition >= len(l.input) {
 		l.ch = 0
@@ -30,7 +30,7 @@ func (l *Lexer) readChar() {
 	l.readPosition += 1
 }
 
-// Reads next char from Lexer input.
+// Reads next char from Lexer input and turns current Token.
 func (l *Lexer) NextToken() token.Token {
 	var tk token.Token
 
