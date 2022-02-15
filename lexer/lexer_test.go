@@ -24,6 +24,9 @@ func TestNextToken(t *testing.T) {
 		} else {
 			return false;
 		}
+
+		10 == 10;
+		10 != 9;
 		`
 
 	tests := []struct {
@@ -95,6 +98,14 @@ func TestNextToken(t *testing.T) {
 		{token.FALSE, "false"},
 		{token.SEMICOLON, ";"},
 		{token.CBRACE, "}"},
+		{token.INT, "10"},
+		{token.IS_EQUAL, "=="},
+		{token.INT, "10"},
+		{token.SEMICOLON, ";"},
+		{token.INT, "10"},
+		{token.NOT_EQUAL, "!="},
+		{token.INT, "9"},
+		{token.SEMICOLON, ";"},
 		{token.EOF, ""},
 	}
 
@@ -104,6 +115,7 @@ func TestNextToken(t *testing.T) {
 		tk := lex.NextToken()
 
 		if tk.Type != ts.exptedType {
+			t.Logf("%d , %d", lex.position, lex.readPosition)
 			t.Fatalf("tests[%d] - Wrong token type. Expected=%q, got=%q", i, ts.exptedType, tk.Type)
 		}
 
