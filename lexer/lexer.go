@@ -84,7 +84,7 @@ func (l *Lexer) readIdentifier() string {
 // Ignore whitespace characters (Space, TAB and Carriage return)
 // and move to next character.
 func (l *Lexer) skipWhitespace() {
-	for l.ch == ' ' || l.ch == '\t' || l.ch == '\r' {
+	for l.ch == ' ' || l.ch == '\t' || l.ch == '\r' || l.ch == '\n' {
 		l.readChar()
 	}
 }
