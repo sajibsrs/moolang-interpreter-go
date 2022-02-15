@@ -30,6 +30,15 @@ func (l *Lexer) readChar() {
 	l.readPosition += 1
 }
 
+// Returns current char if exists, otherwise 0.
+func (l *Lexer) peekChar() byte {
+	if l.readPosition >= len(l.input) {
+		return 0
+	} else {
+		return l.input[l.readPosition]
+	}
+}
+
 // Reads next char from Lexer input and turns current Token.
 func (l *Lexer) NextToken() token.Token {
 	var tk token.Token
