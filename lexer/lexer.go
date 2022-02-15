@@ -70,7 +70,20 @@ func (l *Lexer) NextToken() token.Token {
 	return tk
 }
 
-// Reads identifiers and returns it
+// Reads a number and returns it.
+// Then moves to the next character.
+func (l *Lexer) readNumber() string {
+	position := l.position
+
+	for isDigit(l.ch) {
+		l.readChar()
+	}
+
+	return l.input[position:l.position]
+}
+
+// Reads an identifier and returns it.
+// Then moves to the next character.
 func (l *Lexer) readIdentifier() string {
 	position := l.position
 
