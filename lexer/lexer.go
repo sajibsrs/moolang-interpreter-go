@@ -68,6 +68,7 @@ func (l *Lexer) NextToken() token.Token {
 	return tk
 }
 
+// Reads identifiers and returns it
 func (l *Lexer) readIdentifier() string {
 	position := l.position
 
