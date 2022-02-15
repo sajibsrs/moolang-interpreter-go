@@ -107,7 +107,12 @@ func newToken(tk token.TokenType, ch byte) token.Token {
 	return token.Token{Type: tk, Literal: string(ch)}
 }
 
-// Check if passed argument is a letter or underscore.
+// Checks if passed argument is a letter or underscore.
 func isLetter(ch byte) bool {
 	return 'a' <= ch && ch <= 'z' || 'A' <= ch && ch <= 'Z' || ch == '_'
+}
+
+// Checks if passed argument is a numerical digit.
+func isDigit(ch byte) bool {
+	return '0' <= ch && ch <= '9'
 }
