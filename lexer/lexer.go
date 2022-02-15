@@ -67,6 +67,16 @@ func (l *Lexer) NextToken() token.Token {
 	return tk
 }
 
+func (l *Lexer) readIdentifier() string {
+	position := l.position
+
+	for isLetter(l.ch) {
+		l.readChar()
+	}
+
+	return l.input[position:l.position]
+}
+
 // Creates new token and returns Token object.
 func newToken(tk token.TokenType, ch byte) token.Token {
 	return token.Token{Type: tk, Literal: string(ch)}
