@@ -2,20 +2,24 @@ package ast
 
 import "moolang/token"
 
+// Base node interface
 type Node interface {
 	TokenLiteral() string
 }
 
+// Statement interface
 type Statement interface {
 	Node
 	statementNode()
 }
 
+// Expression interface
 type Expression interface {
 	Node
 	expressionNode()
 }
 
+// AST program node
 type Program struct {
 	Node
 	Statements []Statement
@@ -29,6 +33,7 @@ func (p *Program) TokenLiteral() string {
 	}
 }
 
+// "let" statement node
 type LetStatement struct {
 	Token token.Token
 	Name  *Identifier
@@ -41,6 +46,7 @@ func (l *LetStatement) TokenLiteral() string {
 	return l.Token.Literal
 }
 
+// Identifier node
 type Identifier struct {
 	Token token.Token
 	Value string
