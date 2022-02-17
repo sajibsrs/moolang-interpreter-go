@@ -79,7 +79,8 @@ func (p *Parser) parseLetStatement() *ast.LetStatement {
 		return nil
 	}
 
-	// TODO:
+	// TODO: For now skipping expression
+	// until a semicolon is found
 	for !p.curTokenIs(token.SEMICOLON) {
 		p.nextToken()
 	}
@@ -87,6 +88,8 @@ func (p *Parser) parseLetStatement() *ast.LetStatement {
 	return stmt
 }
 
+// Checks if the current token type matches the
+// input token type
 func (p *Parser) curTokenIs(t token.TokenType) bool {
 	return p.curToken.Type == t
 }
