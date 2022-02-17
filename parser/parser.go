@@ -21,12 +21,6 @@ func New(l *lexer.Lexer) *Parser {
 		errors: []string{},
 	}
 
-	// empty := token.Token{}
-
-	// for (p.curToken == empty) || (p.peekToken == empty) {
-	// 	p.nextToken()
-	// }
-
 	// Reads two token, so both curToken and peekToken are set
 	// p.nextToken()
 	// p.nextToken()
@@ -88,16 +82,20 @@ func (p *Parser) parseLetStatement() *ast.LetStatement {
 	return stmt
 }
 
-// Checks if the current token type matches the
-// input token type
+// Checks if the parsers current token type
+// matches the input token type.
 func (p *Parser) curTokenIs(t token.TokenType) bool {
 	return p.curToken.Type == t
 }
 
+// Checks if the parsers peek token type
+// matches the input token type.
 func (p *Parser) peekTokenIs(t token.TokenType) bool {
 	return p.peekToken.Type == t
 }
 
+// Checks if the parsers peek token type matches the input
+// token type. If match found moves to the next token.
 func (p *Parser) expectPeek(t token.TokenType) bool {
 	if p.peekTokenIs(t) {
 		p.nextToken()
